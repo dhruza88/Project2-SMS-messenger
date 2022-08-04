@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/dhruza88/Project2-SMS-messenger.git"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> 538b794da8cf7fb598672ac5f055564bd038e695
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -17,8 +21,17 @@
   },
   "homepage": "https://github.com/dhruza88/Project2-SMS-messenger#readme",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "nodemon": "^2.0.19"
+=======
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+>>>>>>> 538b794da8cf7fb598672ac5f055564bd038e695
   }
 }
