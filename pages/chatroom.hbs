@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Chat app</title>
-        <script src="/socket.io/socket.io.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat app</title>
+    <script src="/socket.io/socket.io.js"></script>
 
 
     <!-- Script to send and receive from socket.io server -->
-        <script src=""></script>
-    </head>
-    <body>
-        <div id="app">
-            <h1 class="container">Chatroom</h1>
+    <script src=""></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Chatroom</h1>
+            <a href="../public/profile.html" class="btn">Leave Room</a>
+        </header>
+        <main>
+            <div id="chat-sidebar">
+                <h3>Room Name:</h3>
+                <h3 id="room-name"></h3>
+            </div>
 
         <!-- Saved chat messages.  In JS file get chatContainer element from our html page, then append the new div to the message container div
             // const chatContainer = document.getElementById('chatContainer')
             // chatContainer.append(messageElement)
             // }
          -->
-            <div id="chatContainer"></div>
+            <div id="chat-container"></div>
 
         <!-- Send message -->
             <div class="container">
-                <form id="messageForm">
+                <form id="message-form">
                     <input 
                     id = "msg"
                     type = "text"
                     placeholder = "Enter message..."
                     autocomplete="off"
                     />
-                    <button class="btn" type="submit" id="sendBtn">Send</button>
+                    <button class="btn" type="submit" id="send-btn">Send</button>
                 </form>
             </div>
         </div>
