@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>User Profile</title>
-        <script src="../public/profile.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <script src="../public/profile.js"></script>
+</head>
 
-    <body>
-        <div id="img">
-            
-            <h1 class="container">Chatroom</h1>
-
-        <!-- Saved chat messages.  In JS file get chatContainer element from our html page, then append the new div to the message container div
-            // const chatContainer = document.getElementById('chatContainer')
-            // chatContainer.append(messageElement)
-            // }
-         -->
-            <div id="chatContainer"></div>
-
-        <!-- Join chatroom button -->
-            <div class="container">
-                <button class="btn" type="submit" id="sendBtn">Send</button>
-
+<body>
+    <div id="user-profile">
+            <div id="img"></div>
+            <div id="user-name"></div>
+            <a href="./chatroom.hbs" class="btn">Join Chatroom</a>
+            <div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
-        </div>
-     </body>
+    </div>
+ </body>
 </html>
