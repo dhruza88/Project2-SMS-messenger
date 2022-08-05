@@ -14,20 +14,25 @@
     <div id="app">
         <header>
             <h1>Chatroom</h1>
-            <a href="../public/profile.html" class="btn">Leave Room</a>
+            <a href="./profile.hbs" class="btn">Leave Room</a>
         </header>
         <main>
             <div id="chat-sidebar">
                 <h3>Room Name:</h3>
                 <h3 id="room-name"></h3>
+                <h3>Users:</h3>
+                <ul id-="users">
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
 
         <!-- Saved chat messages.  In JS file get chatContainer element from our html page, then append the new div to the message container div
-            // const chatContainer = document.getElementById('chatContainer')
-            // chatContainer.append(messageElement)
+            // const chatMessages = document.getElementById('chat-messages')
+            // chatMessages.append(messageElement)
             // }
          -->
-            <div id="chat-container"></div>
+            <div id="chat-messages"></div>
 
         <!-- Send message -->
             <div class="container">
