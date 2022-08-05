@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible">
-    <title>SMS Messenger</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chat app</title>
+        <script>
+            src=
+            integrity=
+            crossorigin=
+        </script>
 
-<body>
-    {{{body}}}
-</body>
+    <!-- Script to send and receive from socket.io server -->
+        <script src=""></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1 class="container">Chatroom</h1>
+
+        <!-- Saved chat messages.  In JS file get chatContainer element from our html page, then append the new div to the message container div
+            // const chatContainer = document.getElementById('chatContainer')
+            // chatContainer.append(messageElement)
+            // }
+         -->
+            <div id="chatContainer"></div>
+
+        <!-- Send message -->
+            <div class="container">
+                <form id="messageForm">
+                    <input class="input center" type="text" id="messageInput" />
+                    <button class="btn" type="submit" id="sendBtn">Send</button>
+                </form>
+            </div>
+        </div>
+     </body>
 </html>
