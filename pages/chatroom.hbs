@@ -4,11 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Chat app</title>
-        <script>
-            src=
-            integrity=
-            crossorigin=
-        </script>
+        <script src="/socket.io/socket.io.js"></script>
+
 
     <!-- Script to send and receive from socket.io server -->
         <script src=""></script>
@@ -27,7 +24,12 @@
         <!-- Send message -->
             <div class="container">
                 <form id="messageForm">
-                    <input class="input center" type="text" id="messageInput" />
+                    <input 
+                    id = "msg"
+                    type = "text"
+                    placeholder = "Enter message..."
+                    autocomplete="off"
+                    />
                     <button class="btn" type="submit" id="sendBtn">Send</button>
                 </form>
             </div>
