@@ -29,6 +29,7 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3",
     "session": "^0.1.0",
+    "sessions": "^0.0.2-7",
     "socket.io": "^4.5.1"
   }
 }

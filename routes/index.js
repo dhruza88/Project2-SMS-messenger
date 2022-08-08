@@ -6,10 +6,6 @@ router.use(frontEndRoutes);
 router.use('/api', apiRoutes);
 
 
-router.use((req, res) => {
-  res.send("<h1>Wrong Route!</h1>")
-});
-
 router.get("/sessiondata",(req,res)=>{
   res.json(req.session)
 })

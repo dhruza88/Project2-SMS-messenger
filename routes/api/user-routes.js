@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const {User,Chat} = require('../../models');
+const {User,Chatroom} = require('../../models');
 
 router.get("/user",(req,res)=>{
     User.findAll({
-        include:[Chat]
+        include:[Chatroom]
     }).then(data=>{
         res.json(data)
     }).catch(err=>{
@@ -18,7 +18,6 @@ router.post("/user",(req,res)=>{
     }
     User.create({
       email:req.body.email,
-      chatroom:req.body.chatroom,
       picture:req.body.picture,
       bioId:req.session.bioId
     }).then(data=>{
