@@ -29,10 +29,10 @@ User.init(
             allowNull:false,
             unique: true,
         },
-        picture: {
-            type: DataTypes.STRING,
-            allowNull:false,
-        },
+        // picture: {
+        //     type: DataTypes.STRING,
+        //     allowNull:false,
+        // },
         bio: {
             type:DataTypes.TEXT,
             
@@ -46,7 +46,10 @@ User.init(
                 return userObj
             }
         },
-        modelName:"user",
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user',
     }
 );
 
