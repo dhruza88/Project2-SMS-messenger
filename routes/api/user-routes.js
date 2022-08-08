@@ -28,14 +28,9 @@ router.post("/user",(req,res)=>{
     })
 })
 
-//just for adopt and return
-router.put("/user/:id",(req,res)=>{
-    User.update({
-        email:req.body.email,
-        chatroom:req.body.chatroom,
-        picture:req.body.picture,
-        bioId:req.session.bioId
-    },{
+
+router.get("/user/:id",(req,res)=>{
+    User.findOne({
         where:{
             id:req.params.id
         }
