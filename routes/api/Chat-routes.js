@@ -43,7 +43,6 @@ router.post("/login",(req,res)=>{
             return res.status(401).json({msg:"invalid login"})
         }
         req.session.userId=foundUser.id;
-        req.session.isFarmer=false;
         req.session.loggedIn=true;
         res.json(foundUser);
     })
