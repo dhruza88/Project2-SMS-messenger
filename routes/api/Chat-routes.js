@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt")
 const Chat = require('../../models/chat');
 const { User } = require('../../models');
 
-router.get("/",(req,res)=>{
+router.get("/chat",(req,res)=>{
     Chat.findAll({
         include:[User]
     }).then(data=>{
@@ -14,7 +14,7 @@ router.get("/",(req,res)=>{
     })
 })
 
-router.post("/",(req,res)=>{
+router.post("/chat",(req,res)=>{
     Chat.create({
       
     }).then(data=>{
