@@ -6,7 +6,7 @@ const messageRoutes = require('./Message-routes')
 
 router.use('/chatroom', chatroomRoutes);
 router.use('/user', userRoutes);
-router.use('message', messageRoutes);
+router.use('/message', messageRoutes);
 
 
 module.exports = router;
