@@ -28,6 +28,7 @@
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3",
+    "session": "^0.1.0",
     "socket.io": "^4.5.1"
   }
 }
