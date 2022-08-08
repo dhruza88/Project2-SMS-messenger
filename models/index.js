@@ -12,14 +12,14 @@ Message.belongsTo(Chatroom, {
 
 User.belongsToMany(Chatroom, {
     through: {
-        model: message
+        model: 'message'
     },
     as: ''
 });
 
 Chatroom.belongsToMany(User, {
     through: {
-        model: message
+        model: 'message'
     },
     as: ''
 });
