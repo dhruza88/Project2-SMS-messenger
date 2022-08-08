@@ -18,8 +18,14 @@ router.post("/user",(req,res)=>{
     }
     User.create({
       email:req.body.email,
+<<<<<<< HEAD
       picture:req.body.picture,
       bioId:req.session.bioId
+=======
+    //   chatroom:req.body.chatroom,
+    //   picture:req.body.picture,
+      bio:req.session.bio
+>>>>>>> 27ffb700e4064fcfa38c7866b798df604d783dd5
     }).then(data=>{
         res.json(data)
     }).catch(err=>{
