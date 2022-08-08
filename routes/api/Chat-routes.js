@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt")
 const Chat = require('../../models/chat');
 const { User } = require('../../models');
+const app = express();
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
