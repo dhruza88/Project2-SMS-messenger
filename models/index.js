@@ -2,18 +2,27 @@ const User = require('./User')
 const Chatroom = require('./Chatroom')
 const Message = require('./Message')
 
-User.belongsToMany(Chat, {
+Message.belongsTo(User, {
+    foreignKey: 'user_id'
+})
+
+Message.belongsTo(Chatroom, {
+    foreignKey: 'chatroom_id'
+})
+
+User.belongsToMany(Chatroom, {
     through: {
         model: message
-    }
-    foreignKey: 'user_id',
-})
-
-
+    },
+    as: ''
+});
 
 Chatroom.belongsToMany(User, {
-    foreignKey: 'user_id',
-})
+    through: {
+        model: message
+    },
+    as: ''
+});
 
 // Message will belong to user foreignkey of userId
 // Message belongs to chatroom foreignkey of chatroomId
