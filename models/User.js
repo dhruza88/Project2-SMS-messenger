@@ -1,13 +1,18 @@
 const { Model, DataTypes} = require("sequelize");
 const sequelize = require("../config/connection");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 
 class User extends Model {}
 
 User.init(
     {
 
-
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+          },
         email: {
             type: DataTypes.STRING,
             allowNull:false,
@@ -24,16 +29,11 @@ User.init(
             allowNull:false,
             unique: true,
         },
-        chatroom: {
-            type: DataTypes.STRING,
-            allowNull:false,
-            unique: true,
-        },
         picture: {
             type: DataTypes.STRING,
             allowNull:false,
         },
-        bioId: {
+        bio: {
             type:DataTypes.TEXT,
             
         }
@@ -45,8 +45,12 @@ User.init(
                 userObj.password = bcrypt.hashSync(userObj,password,5);
                 return userObj
             }
-        }
+        },
+        modelName:"user",
     }
 );
 
 module.exports = User;
+
+// rerun schema
+// fix seeds

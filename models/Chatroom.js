@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Chat extends Model {}
-
+// id, name, topic
 Chat.init(
   {
     id: {
@@ -18,13 +18,16 @@ Chat.init(
         key: 'id',
       },
     },
+    text: {
+      type:DataTypes.TEXT, 
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'chat',
+    modelName: 'chatroom',
   }
 );
 
