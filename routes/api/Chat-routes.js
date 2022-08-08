@@ -3,27 +3,29 @@ const router = express.Router();
 const bcrypt = require("bcrypt")
 const Chat = require('../../models/chat');
 const { User } = require('../../models');
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
 
-router.get("/chat",(req,res)=>{
-    Chat.findAll({
-        include:[User]
-    }).then(data=>{
-        res.json(data)
-    }).catch(err=>{
-        res.status(500).json({msg:"womp womp",err})
-    })
+const chats = { }
+
+router.get("/",(req,res)=>{
+   res.render('index', {chats: chats })
 })
 
 router.post("/chat",(req,res)=>{
-    Chat.create({
-      
-    }).then(data=>{
-       
-        res.json(data)
+   if(chats[req.body.chat] != null) {
+    return res.redirect('/')
+   }
+   chats[req.body.chat] = { users: {} }
+   res.redirect(req.body.chat)
+   io.emit('chat-created', req.body.chat)
+})
 
-    }).catch(err=>{
-        res.status(500).json({msg:"womp womp",err})
-    })
+router.get("/chat/:id",(req,res)=>{
+    if(chats[req.params.chat] == null ){
+        return res.redirect('/')
+    }
+    res.render('chat', {chatName: req.params.chat})
 })
 
 //TODO: add login route when sessions exist
