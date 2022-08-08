@@ -1,14 +1,25 @@
 const User = require('./User')
-const Chat = require('./Chat')
+const Chatroom = require('./Chatroom')
+const Message = require('./Message')
 
-User.hasMany(Chat, {
+User.belongsToMany(Chat, {
+    through: {
+        model: message
+    }
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
 })
 
-Chat.hasMany(User, {
-    foreignKey: 'chat_id',
-    onDelete: 'CASCADE'
+
+
+Chatroom.belongsToMany(User, {
+    foreignKey: 'user_id',
 })
 
-module.exports = { User, Chat };
+// Message will belong to user foreignkey of userId
+// Message belongs to chatroom foreignkey of chatroomId
+// Chatroom belongs to many user through message
+// User belongs to many chatroom through message
+
+// message holds userid and chatroom id
+
+module.exports = { User, Chatroom };
