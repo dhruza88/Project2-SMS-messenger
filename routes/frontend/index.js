@@ -8,7 +8,7 @@ router.get("/user",(req,res)=>{
     }).then(data=>{
         const hbsData = data.map(modelIns=>modelIns.toJSON())
         console.log(hbsData)
-        res.render("home",{
+        res.render("user",{
             chats:hbsData,
             isLoggedIn:req.session.loggedIn
         })
@@ -34,7 +34,7 @@ router.get("/chat",(req,res)=>{
     }).then(data=>{
         const hbsData = data.map(modelIns=>modelIns.toJSON())
         console.log(hbsData)
-        res.render("home",{
+        res.render("chat",{
             chats:hbsData,
             isLoggedIn:req.session.loggedIn
         })
