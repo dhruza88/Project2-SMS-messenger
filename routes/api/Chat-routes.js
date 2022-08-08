@@ -9,8 +9,8 @@ const io = require('socket.io')(server)
 
 const chats = { }
 
-router.get("/",(req,res)=>{
-   res.render('index', {chats: chats })
+router.get("/chatroom",(req,res)=>{
+   res.render('chatroom', {chats: chats })
 })
 
 router.post("/chat",(req,res)=>{
@@ -22,11 +22,11 @@ router.post("/chat",(req,res)=>{
    io.emit('chat-created', req.body.chat)
 })
 
-router.get("/chat/:id",(req,res)=>{
+router.get("/chatroom/:id",(req,res)=>{
     if(chats[req.params.chat] == null ){
         return res.redirect('/')
     }
-    res.render('chat', {chatName: req.params.chat})
+    res.render('chatroom', {chatName: req.params.chat})
 })
 
 //TODO: add login route when sessions exist
