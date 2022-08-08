@@ -4,7 +4,7 @@ const {User,Chat} = require('../../models');
 
 router.get("/user",(req,res)=>{
     User.findAll({
-        include:[,Chat]
+        include:[Chat]
     }).then(data=>{
         res.json(data)
     }).catch(err=>{
