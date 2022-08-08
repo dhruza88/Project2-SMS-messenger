@@ -6,7 +6,7 @@ document.querySelector("#signup").addEventListener("submit",e=>{
         password:document.querySelector("#signup-password").value,
     }
     console.log(userObj)
-    fetch("/api/users",{
+    fetch("/api/user",{
         method:"POST",
         body:JSON.stringify(userObj),
         headers:{
