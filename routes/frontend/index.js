@@ -55,9 +55,9 @@ router.get("/chat/:id",(req,res)=>{
 
 router.get("/login",(req,res)=>{
     if(req.session.loggedIn){
-        res.redirect("/profile")
+        res.redirect("/user")
     }
-    res.render("loginSignup",{
+    res.render("login",{
         isLoggedIn:false
     })
 })
