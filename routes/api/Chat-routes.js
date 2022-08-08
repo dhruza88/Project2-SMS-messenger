@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt")
 const Chat = require('../../models/chat');
+const { User } = require('../../models');
 
 router.get("/",(req,res)=>{
     Chat.findAll({
@@ -28,7 +29,7 @@ router.post("/",(req,res)=>{
 //TODO: add login route when sessions exist
 
 router.post("/login",(req,res)=>{
-    Chat.findOne({
+    User.findOne({
         where:{
             email:req.body.email
         }
