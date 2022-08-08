@@ -1,0 +1,9 @@
+[
+    {
+      "email": "abc@abc.com",
+      "password": "password",
+      "username": "abc",
+      "picture":"abcimg",
+      "bio":"abcabc"
+    }
+  ]
