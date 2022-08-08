@@ -31,4 +31,4 @@ Chatroom.belongsToMany(User, {
 
 // message holds userid and chatroom id
 
-module.exports = { User, Chatroom };
+module.exports = { User, Message, Chatroom };
