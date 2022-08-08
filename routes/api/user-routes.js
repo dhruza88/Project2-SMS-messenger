@@ -1,88 +1,64 @@
-const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const express = require('express');
+const router = express.Router();
+const {User,Chat} = require('../../models');
 
-// The `/api/categories` endpoint
-
-// router.get('/', async (req, res) => {
-//   // find all categories
-//   // be sure to include its associated Products
-
-// });
-
-router.get('/',(req,res)=>{
-  Category.findAll().then(data=>{
-      res.json(data)
-  }).catch(err=>{
-      res.status(500).json({msg:"whoops,my bad!",err})
-  })
-});
-
-router.get("/:id",(req,res)=>{
-  Category.findByPk(req.params.id,{
-      include:[{
-          model:Product
-      }]
-  }).then(data=>{
-      res.json(data)
-  }).catch(err=>{
-      res.status(500).json({msg:"whoops,my bad!",err})
-  })
-});
-
-// router.get('/:id', async (req, res) => {
-//   // find one category by its `id` value
-//   // be sure to include its associated Products
-
-// });
+router.get("/",(req,res)=>{
+    User.findAll({
+        include:[,Chat]
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg:"womp womp",err})
+    })
+})
 
 router.post("/",(req,res)=>{
-  Category.create({
-      category_name:req.body.category_name
-  }).then(data=>{
-      res.json(data)
-  }).catch(err=>{
-      res.status(500).json({msg:"whoops,my bad!",err})
-  })
-});
+    if(!req.session.isUser){
+        return res.status(403).json({msg:""})
+    }
+    User.create({
+      email:req.body.email,
+      chatroom:req.body.chatroom,
+      picture:req.body.picture,
+      bioId:req.session.bioId
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg:"womp womp",err})
+    })
+})
 
-// router.post('/', async (req, res) => {
-//   // create a new category
-
-// });
-
-router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
-  console.log('');
-  console.log(req.params);
-  console.log(req.body);
-  console.log('');
-  const whr = {where: {id: req.params.id}};
-  const values = {category_name: req.body.category_name};
-  Category.update(
-      values,
-      whr
-  ).then(data=>{
-      res.json(data)
-  }).catch(err=>{
-      res.status(500).json({msg:"whoops,my bad!",err})
-
-  })
-});
+//just for adopt and return
+router.put("/:id",(req,res)=>{
+    User.update({
+        email:req.body.email,
+        chatroom:req.body.chatroom,
+        picture:req.body.picture,
+        bioId:req.session.bioId
+    },{
+        where:{
+            id:req.params.id
+        }
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg:"womp womp",err})
+    })
+})
 
 router.delete("/:id",(req,res)=>{
-  Category.destroy({
-      where:{
-          id:req.params.id
-      }
-  }).then(data=>{
-      res.json(data)
-  }).catch(err=>{
-      res.status(500).json({msg:"whoops,my bad!",err})
-  })
-});
+    User.destroy({
+        where:{
+            id:req.params.id
+        }
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg:"womp womp",err})
+    })
+})
 
-// router.delete('/:id', async (req, res) => {
-//   // delete a category by its `id` value
-// });
+
+//TODO: add login route when sessions exist
 
 module.exports = router;

@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt")
-const {Caretaker,Pig} = require('../../models');
-const Chatroom = require('../../models/chatroom');
+const Chat = require('../../models/chat');
 
 router.get("/",(req,res)=>{
-    Chatroom.findAll({
+    Chat.findAll({
         include:[User]
     }).then(data=>{
         res.json(data)
@@ -15,7 +14,7 @@ router.get("/",(req,res)=>{
 })
 
 router.post("/",(req,res)=>{
-    Chatroom.create({
+    Chat.create({
       
     }).then(data=>{
        
@@ -29,7 +28,7 @@ router.post("/",(req,res)=>{
 //TODO: add login route when sessions exist
 
 router.post("/login",(req,res)=>{
-    Chatroom.findOne({
+    Chat.findOne({
         where:{
             email:req.body.email
         }
