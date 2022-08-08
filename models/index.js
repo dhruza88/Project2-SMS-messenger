@@ -14,14 +14,14 @@ User.belongsToMany(Chatroom, {
     through: {
         model: 'message'
     },
-    as: ''
+    as: 'joined_users'
 });
 
 Chatroom.belongsToMany(User, {
     through: {
         model: 'message'
     },
-    as: ''
+    as: 'added_chatrooms'
 });
 
 // Message will belong to user foreignkey of userId
