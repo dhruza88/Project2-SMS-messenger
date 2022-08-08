@@ -1,0 +1,10 @@
+[
+    {
+      "email": "abc@abc.com",
+      "password": "password",
+      "username": "abc",
+      "chatroom":"123",
+      "picture":"abcimg",
+      "bioID":"abcabc"
+    }
+  ]
