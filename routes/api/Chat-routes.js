@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt")
 const { User,Chatroom, Message } = require('../../models');
+const app = express();
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
