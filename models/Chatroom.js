@@ -19,7 +19,7 @@ Chatroom.init(
       },
     },
     topic: {
-      type: DataTypes.TEXT
+      type: DataTypes.STRING,
     },
     text: {
       type:DataTypes.TEXT, 
