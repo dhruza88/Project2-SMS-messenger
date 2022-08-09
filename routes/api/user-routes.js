@@ -89,17 +89,17 @@ router.get("/",(req,res)=>{
 // })
 
 
-// router.get("/user/:id",(req,res)=>{
-//     User.findOne({
-//         where:{
-//             id:req.params.id
-//         }
-//     }).then(data=>{
-//         res.json(data)
-//     }).catch(err=>{
-//         res.status(500).json({msg:"womp womp",err})
-//     })
-// })
+router.get("/:id",(req,res)=>{
+    User.findOne({
+        where:{
+            id:req.params.id
+        }
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg:"womp womp",err})
+    })
+})
 
 // router.delete("/user/:id",(req,res)=>{
 //     User.destroy({
