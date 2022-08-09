@@ -2,17 +2,35 @@ const express = require('express');
 const router = express.Router();
 const {Chatroom,User,Message} = require('../../models');
 
+/*
+ include: [
+            {
+                model: Chatroom,
+                as: "joined_users"
+            }
+        ]
+*/
+
 
 router.get("/", (req,res) =>{
     User.findAll({
-        include:[Chatroom,Message]
+        include:[
+            {
+                model: Chatroom,
+                as: "joined_users"
+            },
+           //  Message
+        ]
     }).then(data=>{
         const hbsData = data.map(user=>user.toJSON())
-        res.render("homepage", {
+        res.render("base", {
             users:hbsData,
             loggedIn:req.session.loggedIn
         })
     })
+    .catch((error) => {
+        res.json({ message: error?.message || "Internal server error" })
+    });
 })
 
 // router.get("/user",(req,res)=>{
