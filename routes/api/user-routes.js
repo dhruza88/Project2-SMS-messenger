@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {User,Chatroom} = require('../../models');
+const bcrypt = require("bcrypt");
 
 router.post('/', async (req, res) => {
     try {
@@ -27,7 +28,10 @@ router.post('/login',async(req, res) => {
 
         // TODO: Needs inpromovement
         // TODO: Use Bcrypt NPM Package instead
-        const validPassword = userData?.password === req.body.password;
+        // const validPassword = userData?.password === req.body.password;
+        if(!bcrypt.compareSync(req.body.password, userData.password)){
+            return res.status(401).json({msg: "incorrect login info, try again!"})
+        }
 
         if(!validPassword){
             res.status(400).json({ message: "Incorrect login info, try again"});
