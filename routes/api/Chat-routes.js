@@ -9,7 +9,7 @@ const io = require('socket.io')(server)
 router.get('/',async (req, res) =>{
     try {
         const chats = await Chatroom.findAll();
-        res.json(users)
+        res.json(chats)
     } catch (err) {
         res.status(400).json(err);
     }

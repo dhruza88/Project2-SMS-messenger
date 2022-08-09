@@ -18,14 +18,16 @@ router.post('/', async (req, res) => {
 
 router.post('/login',async(req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email } });
+        const userData = await User.findOne({ where: { email: req.body.email }, raw: true });
 
         if (!userData) { 
             res.status(400).json({ message: "Incorrect login info, try again"});
             return;
         }
 
-        const validPassword = await userData.checkPassword(req.body.password);
+        // TODO: Needs inpromovement
+        // TODO: Use Bcrypt NPM Package instead
+        const validPassword = userData?.password === req.body.password;
 
         if(!validPassword){
             res.status(400).json({ message: "Incorrect login info, try again"});
@@ -54,10 +56,15 @@ router.post('/logout', (req, res) => {
 });
 
 
-
-router.get("/user",(req,res)=>{
+// TODO: The issue is here
+router.get("/",(req,res)=>{
     User.findAll({
-        include:[Chatroom]
+        include: [
+            {
+                model: Chatroom,
+                as: "joined_users"
+            }
+        ]
     }).then(data=>{
         res.json(data)
     }).catch(err=>{
