@@ -8,7 +8,7 @@ app.set('view engine', 'hbs');
 
 app.engine('handlebars', engine({
     layoutsDir: `${__dirname}/views/layouts`,
-    extname: 'hbs'
+    extname: 'handlebars'
 }));
 
 app.use(express.static('public'));

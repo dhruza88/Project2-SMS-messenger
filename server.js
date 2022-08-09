@@ -31,8 +31,11 @@ const sess = {
 
 app.use(session(sess));
 
-app.engine('handlebars', engine());
-app.set('view engine', 'handlebars');
+app.engine('handlebars', engine({
+    layoutsDir: `${__dirname}/views/layouts`,
+    extname: 'handlebars'
+}));
+app.set('views',__dirname + '/views')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
