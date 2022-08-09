@@ -8,9 +8,9 @@ const chatroomData = require('./chatroomData.json');
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
-    await User.bulkCreate(userData);
+    await User.bulkCreate(userData,{individualHooks:true});
+    await Chatroom.bulkCreate(chatroomData,{individualHooks:true});
     await Message.bulkCreate(messageData);
-    await Chatroom.bulkCreate(chatroomData);
   
     // const users = await User.bulkCreate(userData, {
     //   individualHooks: true,
