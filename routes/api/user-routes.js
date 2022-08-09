@@ -55,15 +55,15 @@ router.post('/logout', (req, res) => {
 
 
 
-// router.get("/user",(req,res)=>{
-//     User.findAll({
-//         include:[Chatroom]
-//     }).then(data=>{
-//         res.json(data)
-//     }).catch(err=>{
-//         res.status(500).json({msg:"womp womp",err})
-//     })
-// })
+router.get("/user",(req,res)=>{
+    User.findAll({
+        include:[Chatroom]
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg:"womp womp",err})
+    })
+})
 
 // router.post("/user",(req,res)=>{
 //     if(!req.session.isUser){
