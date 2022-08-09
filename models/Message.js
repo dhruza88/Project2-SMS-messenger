@@ -28,8 +28,8 @@ Message.init(
                 key: 'id',
               },
         },
-        // text: string
-        text: {
+        // message: string
+        message: {
             type: DataTypes.TEXT,
         }
     },

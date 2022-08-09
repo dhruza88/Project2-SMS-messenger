@@ -1,6 +1,27 @@
 [
-{
-    "topic":"HTML",
-    "text":"Welcome"
-}
+    {
+        "user_id":1, 
+        "topic":"HTML",
+        "text":"Welcome to HTML"
+    },
+    {
+        "user_id":2, 
+        "topic":"CSS",
+        "text":"Welcome to CSS"
+    },
+    {
+        "user_id":3, 
+        "topic":"JavaScript",
+        "text":"Welcome to JavaScript"
+    },
+    {
+        "user_id":4,
+        "topic":"API",
+        "text":"Welcome to API"
+    },
+    {
+        "user_id":5,
+        "topic":"Node",
+        "text":"Welcome to Node.js"
+    }
 ]
