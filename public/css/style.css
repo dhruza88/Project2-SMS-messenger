@@ -137,19 +137,10 @@ body{
 	outline: none;
 }
 
-::-webkit-input-placeholder{
-   color: rgba(255,255,255,0.6);
-}
-
-::-moz-input-placeholder{
-   color: rgba(255,255,255,0.6);
-}
 
 
 
 
-
-body{margin-top:20px;}
 
 .chat-messages {
     display: flex;
