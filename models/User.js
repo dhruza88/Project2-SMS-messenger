@@ -29,10 +29,10 @@ User.init(
             allowNull:false,
             unique: true,
         },
-        picture: {
-            type: DataTypes.STRING,
-            allowNull:false,
-        },
+        // picture: {
+        //     type: DataTypes.STRING,
+        //     allowNull:false,
+        // },
         bio: {
             type:DataTypes.TEXT,
             
@@ -40,13 +40,16 @@ User.init(
     },
     {
         sequelize,
-        hooks:{
-            beforeCreate: userObj=>{
-                userObj.password = bcrypt.hashSync(userObj,password,5);
-                return userObj
-            }
-        },
-        modelName:"user",
+        // hooks:{
+        //     beforeCreate: userObj=>{
+        //         userObj.password = bcrypt.hashSync(userObj,password,5);
+        //         return userObj
+        //     }
+        // },
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user',
     }
 );
 

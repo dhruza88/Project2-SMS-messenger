@@ -1,19 +1,50 @@
 const express = require('express');
 const router = express.Router();
-const {Chat,User} = require('../../models');
+const {Chatroom,User,Message} = require('../../models');
 
-router.get("/user",(req,res)=>{
+/*
+ include: [
+            {
+                model: Chatroom,
+                as: "joined_users"
+            }
+        ]
+*/
+
+
+router.get("/", (req,res) =>{
     User.findAll({
-        include:[Chat]
+        include:[
+            {
+                model: Chatroom,
+                as: "joined_users"
+            },
+           //  Message
+        ]
     }).then(data=>{
-        const hbsData = data.map(modelIns=>modelIns.toJSON())
-        console.log(hbsData)
-        res.render("user",{
-            chats:hbsData,
-            isLoggedIn:req.session.loggedIn
+        const hbsData = data.map(user=>user.toJSON())
+        res.render("base", {
+            users:hbsData,
+            loggedIn:req.session.loggedIn
         })
     })
+    .catch((error) => {
+        res.json({ message: error?.message || "Internal server error" })
+    });
 })
+
+// router.get("/user",(req,res)=>{
+//     User.findAll({
+//         include:[Chatroom]
+//     }).then(data=>{
+//         const hbsData = data.map(modelIns=>modelIns.toJSON())
+//         console.log(hbsData)
+//         res.render("user",{
+//             chats:hbsData,
+//             isLoggedIn:req.session.loggedIn
+//         })
+//     })
+// })
 
 router.get("/user/:id",(req,res)=>{
     User.findByPk(req.params.id,{

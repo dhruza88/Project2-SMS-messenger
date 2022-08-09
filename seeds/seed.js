@@ -6,7 +6,11 @@ const messageData = require('./message.json')
 const chatroomData = require('./chatroomData.json');
 
 const seedDatabase = async () => {
-    // await sequelize.sync({ force: true });
+    await sequelize.sync({ force: true });
+
+    await User.bulkCreate(userData);
+    await Message.bulkCreate(messageData);
+    await Chatroom.bulkCreate(chatroomData);
   
     // const users = await User.bulkCreate(userData, {
     //   individualHooks: true,
@@ -19,7 +23,7 @@ const seedDatabase = async () => {
     //     user_id: users[Math.floor(Math.random() * users.length)].id,
     //   });
     // }
-  
+    console.log('complete')
     process.exit(0);
   };
   
