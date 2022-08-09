@@ -23,7 +23,7 @@ const seedDatabase = async () => {
     //     user_id: users[Math.floor(Math.random() * users.length)].id,
     //   });
     // }
-    console.log('complete')
+    console.log('seeding complete')
     process.exit(0);
   };
   

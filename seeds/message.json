@@ -1,5 +1,17 @@
 [
-{
-    "message":"Hello!"
-}
+    {
+        "user_id":1,
+        "chatroom_id":1,
+        "message":"Hello!"
+    },
+    {
+        "user_id":3,
+        "chatroom_id":1,
+        "message":"Hi, how are you?"
+    },
+    {
+        "user_id":5,
+        "chatroom_id":1,
+        "message":"Yo~~~"
+    }
 ]
