@@ -1,19 +1,32 @@
 const express = require('express');
 const router = express.Router();
-const {Chat,User} = require('../../models');
+const {Chatroom,User,Message} = require('../../models');
 
-router.get("/user",(req,res)=>{
+
+router.get("/", (req,res) =>{
     User.findAll({
-        include:[Chat]
+        include:[Chatroom,Message]
     }).then(data=>{
-        const hbsData = data.map(modelIns=>modelIns.toJSON())
-        console.log(hbsData)
-        res.render("user",{
-            chats:hbsData,
-            isLoggedIn:req.session.loggedIn
+        const hbsData = data.map(user=>user.toJSON())
+        res.render("homepage", {
+            users:hbsData,
+            loggedIn:req.session.loggedIn
         })
     })
 })
+
+// router.get("/user",(req,res)=>{
+//     User.findAll({
+//         include:[Chatroom]
+//     }).then(data=>{
+//         const hbsData = data.map(modelIns=>modelIns.toJSON())
+//         console.log(hbsData)
+//         res.render("user",{
+//             chats:hbsData,
+//             isLoggedIn:req.session.loggedIn
+//         })
+//     })
+// })
 
 router.get("/user/:id",(req,res)=>{
     User.findByPk(req.params.id,{
