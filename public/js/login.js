@@ -1,4 +1,7 @@
-document.querySelector("#login").addEventListener("submit",e=>{
+const loginFormHandler = async (event) => {
+event.preventDefault();
+
+document.getElementById("#login").addEventListener("submit",e=>{
     e.preventDefault();
     const userObj = {
         email:document.querySelector("#login-email").value,
@@ -19,6 +22,7 @@ document.querySelector("#login").addEventListener("submit",e=>{
         }
     })
 })
+
 //Signup form
 document.querySelector("#signup").addEventListener("submit",e=>{
     e.preventDefault();
@@ -42,3 +46,4 @@ document.querySelector("#signup").addEventListener("submit",e=>{
         }
     })
 })
+}

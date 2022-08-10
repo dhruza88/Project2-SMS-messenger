@@ -1,7 +1,7 @@
 var socket = io();
 
-var form = document.getElementById('form');
-var input = document.getElementById('input');
+var form = document.getElementById('message-form');
+var input = document.getElementById('msg');
 // var form1 = document.getElementById('form1');
 // var input1 = document.getElementById('input1');
 
