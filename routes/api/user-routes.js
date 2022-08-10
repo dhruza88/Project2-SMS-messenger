@@ -33,10 +33,10 @@ router.post('/login',async(req, res) => {
             return res.status(401).json({msg: "incorrect login info, try again!"})
         }
 
-        if(!validPassword){
-            res.status(400).json({ message: "Incorrect login info, try again"});
-            return;
-        }
+        // if(!validPassword){
+        //     res.status(400).json({ message: "Incorrect login info, try again"});
+        //     return;
+        // }
 
         req.session.save(() => {
             req.session.userId = userData.id;
