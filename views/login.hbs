@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campfire Messenger</title>
-	<link rel="stylesheet" href="../public/css/style.css">
-</head>
-
 <div class="body">
-		<div class="grad">
 
-        </div>
-        
-        <div class="container">
-		    <div class="header">
-			    <div>Campfire<span>Messenger</span></div>
-		    </div>
-		    <br>
-
-		    <div class="login">
-			    <input type="text" name="login-email" id="login-email" placeholder="email">
-			    <input type="password" name="login-password" id="login-password" placeholder="password">
-			    <input type="button" value="Login">
-		    </div>
-        </div>
+	<div class="container">
+		<div class="header">
+			<div>Campfire<span>Messenger</span></div>
+		</div>
+		<br>
+		<h2>Login</h2>
+		<form class="login">
+			<input type="text" name="login-email" id="login-email" placeholder="email">
+			<input type="password" name="login-password" id="login-password" placeholder="password">
+			<input type="button" value="Login">
+		</form>
+		<h2>Signup</h2>
+		<form id="signup">
+			<input type="text" name="signup-name" id="signup-name" placeholder="name">
+			<input type="text" name="signup-email" id="signup-email" placeholder="email">
+			<input type="password" name="signup-password" id="signup-password" placeholder="password">
+			<button>Signup</button>
+		</form>
+		<script src="../public/js/login.js"></script>
+	</div>
 </div>
-</html>
