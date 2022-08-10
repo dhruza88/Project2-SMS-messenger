@@ -25,8 +25,9 @@ const loginForm = async (event) => {
 document.getElementById("login-form").addEventListener("submit", loginForm);
 
 //Signup form
-document.querySelector("#signup-form").addEventListener("submit",e=>{
-    e.preventDefault();
+const signForm = async (event) => {
+    event.preventDefault();
+
     const userObj = {
         name:document.querySelector("#signup-name").value,
         email:document.querySelector("#signup-email").value,
@@ -46,4 +47,5 @@ document.querySelector("#signup-form").addEventListener("submit",e=>{
             alert("trumpet sound")
         }
     })
-})
+}
+document.getElementById("signup-form").addEventListener("submit", loginForm);
