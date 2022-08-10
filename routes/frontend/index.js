@@ -14,13 +14,13 @@ const {Chatroom,User,Message} = require('../../models');
 
 router.get("/", (req,res) =>{
     User.findAll({
-        include:[
-            {
-                model: Chatroom,
-                as: "chatroom"
-            },
+        // include:[
+        //     {
+        //         model: Chatroom,
+        //         as: "chatroom"
+        //     },
            //  Message
-        ]
+        // ]
     }).then(data=>{
         const hbsData = data.map(user=>user.toJSON())
         res.render("login", {
@@ -48,7 +48,7 @@ router.get("/", (req,res) =>{
 
 router.get("/user/:id",(req,res)=>{
     User.findByPk(req.params.id,{
-        include:[Chatroom]
+        // include:[Chatroom]
     }).then(data=>{
         const hbsData = data.toJSON()
         console.log(hbsData)
@@ -61,12 +61,12 @@ router.get("/user/:id",(req,res)=>{
 
 router.get("/profile",(req,res)=>{
     if(!req.session.loggedIn){
-        res.redirect("/user/login")
+        res.redirect("/login")
     }
     if(req.session.loggedIn)
     {
         User.findByPk(req.session.userId, {
-            include: [Chatroom]
+            // include: [Chatroom]
         }).then(data=>{
             const hbsData = data.toJSON()
             hbsData.isLoggedIn= req.session.loggedIn
