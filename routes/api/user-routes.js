@@ -62,7 +62,7 @@ router.get("/",(req,res)=>{
         include: [
             {
                 model: Chatroom,
-                as: "joined_users"
+                as: "chatroom"
             }
         ]
     }).then(data=>{
