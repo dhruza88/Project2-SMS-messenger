@@ -3,6 +3,8 @@ const router = express.Router();
 const {User,Chatroom} = require('../../models');
 const bcrypt = require("bcrypt");
 
+
+
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
@@ -19,24 +21,21 @@ router.post('/', async (req, res) => {
 
 router.post('/login',async(req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email }, raw: true });
+        const userData = await User.findOne({ where: { email: req.body.email } });
 
         if (!userData) { 
+            console.log(userData)
             res.status(400).json({ message: "Incorrect login info, try again"});
             return;
         }
 
-        // TODO: Needs inpromovement
-        // TODO: Use Bcrypt NPM Package instead
-        // const validPassword = userData?.password === req.body.password;
+
+        
         if(!bcrypt.compareSync(req.body.password, userData.password)){
-            return res.status(401).json({msg: "incorrect login info, try again!"})
+             res.status(401).json({msg: "incorrect login info, try again!"});
+                return
         }
 
-        // if(!validPassword){
-        //     res.status(400).json({ message: "Incorrect login info, try again"});
-        //     return;
-        // }
 
         req.session.save(() => {
             req.session.userId = userData.id;

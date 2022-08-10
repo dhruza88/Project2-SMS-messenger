@@ -23,7 +23,7 @@ router.get("/", (req,res) =>{
         ]
     }).then(data=>{
         const hbsData = data.map(user=>user.toJSON())
-        res.render("base", {
+        res.render("login", {
             users:hbsData,
             loggedIn:req.session.loggedIn
         })
@@ -55,7 +55,7 @@ router.get("/user/:id",(req,res)=>{
         hbsData.isLoggedIn=req.session.loggedIn
         hbsData.userId=req.session.userId
         console.log(hbsData);
-        res.render("user",hbsData)
+        res.render("profile",hbsData)
     })
 })
 
@@ -65,7 +65,7 @@ router.get("/chatroom",(req,res)=>{
     }).then(data=>{
         const hbsData = data.map(modelIns=>modelIns.toJSON())
         console.log(hbsData)
-        res.render("chat",{
+        res.render("chatroom",{
             chats:hbsData,
             isLoggedIn:req.session.loggedIn
         })
@@ -79,14 +79,14 @@ router.get("/chatroom/:id",(req,res)=>{
         const hbsData = data.toJSON()
         console.log(hbsData)
         hbsData.isLoggedIn=req.session.loggedIn
-        res.render("chat",hbsData)
+        res.render("chatroom",hbsData)
     })
 })
 
 
 router.get("/login",(req,res)=>{
     if(req.session.loggedIn){
-        res.redirect("/user")
+        res.redirect("/profile")
     }
     res.render("login",{
         isLoggedIn:false
