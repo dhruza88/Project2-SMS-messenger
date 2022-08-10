@@ -20,10 +20,7 @@ Chatroom.init(
     },
     topic: {
       type: DataTypes.STRING,
-    },
-    text: {
-      type:DataTypes.TEXT, 
-    },
+    }
   },
   {
     sequelize,
