@@ -183,3 +183,16 @@ span{
 .signup input[type=button]:focus{
 	outline: none;
 }
+
+.app{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	color: #fff;
+	background-image: url(../img/2.png);
+	background-position: center center;
+	background-size: cover;
+	z-index: 0;
+	font-family: Arial;
+	font-size: 12px;
+}
