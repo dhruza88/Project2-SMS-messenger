@@ -83,18 +83,18 @@ router.get("/profile",(req,res)=>{
     }
 })
 
-// router.get("/chatroom",(req,res)=>{
-//     Chat.findAll({
-//         include:[User]
-//     }).then(data=>{
-//         const hbsData = data.map(modelIns=>modelIns.toJSON())
-//         console.log(hbsData)
-//         res.render("chatroom",{
-//             chats:hbsData,
-//             isLoggedIn:req.session.loggedIn
-//         })
-//     })
-// })
+router.get("/chatroom",(req,res)=>{
+    Chatroom.findAll({
+        // include:[User]
+    }).then(data=>{
+        const hbsData = data.map(modelIns=>modelIns.toJSON())
+        console.log(hbsData)
+        res.render("chatroom",{
+            chats:hbsData,
+            isLoggedIn:req.session.loggedIn
+        })
+    })
+})
 
 router.get("/chatroom/:id",(req,res)=>{
     if(!req.session.loggedIn){

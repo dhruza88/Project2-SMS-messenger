@@ -1,6 +1,5 @@
-document.querySelector("#login").addEventListener("submit", loginFormmmm)
 
-loginFormmmm = async (event) => {
+const loginForm = async (event) => {
     event.preventDefault();
 
 
@@ -23,9 +22,10 @@ loginFormmmm = async (event) => {
         }
     })
 }
+document.getElementById("login-form").addEventListener("submit", loginForm);
 
 //Signup form
-document.querySelector("#signup").addEventListener("submit",e=>{
+document.querySelector("#signup-form").addEventListener("submit",e=>{
     e.preventDefault();
     const userObj = {
         name:document.querySelector("#signup-name").value,
