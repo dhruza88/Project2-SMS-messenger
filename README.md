@@ -9,8 +9,6 @@ Use our simple messenger app for quick messaging enabled by Socket.IO.  Socket.I
 ### Access our deployed app:
 1.  Open https://campfire-messenger.herokuapp.com/ in browser.
 
-or
-
 ### Set up a local development environment:
 1.  Download [zipped files](https://github.com/dhruza88/Project2-SMS-messenger/archive/refs/heads/dev.zip).
 2.  Extract files onto local drive.
