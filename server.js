@@ -33,7 +33,7 @@ app.use(session(sess));
 
 app.engine('handlebars', engine({
     layoutsDir: `${__dirname}/views/layouts`,
-    extname: 'handlebars'
+    extname: 'hbs'
 }));
 app.set('views',__dirname + '/views')
 

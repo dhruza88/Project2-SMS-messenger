@@ -1,0 +1,46 @@
+{{!-- layouts/base.hbs --}}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {{#if title}}
+                {{title}}
+            {{else}}
+                SMS Messenger
+            {{/if}}
+        </title>
+        <link rel="stylesheet" href="main.css">
+        {{#> head-block}}
+            {{!-- Custom <head> content per page could be added. --}}
+        {{/head-block}}
+    </head>
+    <body>
+        {{{ body }}}
+        {{#> hero-block}}
+            {{!-- Hero content goes here. --}}
+        {{/hero-block}}
+
+        <footer>
+            {{#> footer-block}}
+                {{!--
+                The `includes/footer` partial is the default content,
+                but can be overridden.
+                --}}
+                {{> includes/footer }}
+            {{/footer-block}}
+        </footer>
+
+        {{#> scripts-block}}
+            {{!-- Custom scripts per page can be added. --}}
+        {{/scripts-block}}
+
+        <script src="https://cdn.socket.io/4.3.2/socket.io.esm.min.js"></script>
+        <script src="/js/login.js"></script>
+    </body>
+
+    
+</html>
