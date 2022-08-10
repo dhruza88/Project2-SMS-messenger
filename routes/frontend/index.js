@@ -48,6 +48,11 @@ router.get("/", (req,res) =>{
 // })
 
 router.get("/user/:id",(req,res)=>{
+    if(!req.session.loggedIn){
+        res.redirect("/login")
+    }
+    if(req.session.loggedIn)
+    {
     User.findByPk(req.params.id,{
         // include:[Chatroom]
     }).then(data=>{
@@ -58,6 +63,7 @@ router.get("/user/:id",(req,res)=>{
         console.log(hbsData);
         res.render("profile",hbsData)
     })
+}
 })
 
 router.get("/profile",(req,res)=>{
@@ -91,14 +97,19 @@ router.get("/profile",(req,res)=>{
 // })
 
 router.get("/chatroom/:id",(req,res)=>{
-    Chat.findByPk(req.params.id,{
-        include:[User]
+    if(!req.session.loggedIn){
+        res.redirect("/login")
+    }
+    if(req.session.loggedIn){
+    Chatroom.findByPk(req.params.id,{
+        // include:[User]
     }).then(data=>{
         const hbsData = data.toJSON()
         console.log(hbsData)
         hbsData.isLoggedIn=req.session.loggedIn
         res.render("chatroom",hbsData)
     })
+}
 })
 
 

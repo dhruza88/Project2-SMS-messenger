@@ -19,7 +19,7 @@ span{
 }
 
 .container{
-	padding-top: 150px;
+	padding-top: 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -66,6 +66,7 @@ span{
 	font-size: 16px;
 	font-weight: 400;
 	padding: 4px;
+	margin-top: 10px;
 }
 
 .login input[type=password]{
