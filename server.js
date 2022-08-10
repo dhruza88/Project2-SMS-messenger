@@ -3,13 +3,6 @@ const express = require('express');
 const session = require('express-session');
 const { engine } = require('express-handlebars');
 const routes = require('./routes');
-// const helpers = require('./utils');
-
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-console.log("PID", process.pid);
-
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
@@ -17,7 +10,12 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 const PORT = process.env.PORT || 3002;
 // const hbs = exphbs.create({ utils });
+// const helpers = require('./utils');
 
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+console.log("PID", process.pid);
 
 const sess = {
   secret: 'Super secret secret',
@@ -52,5 +50,5 @@ io.on('connection', (socket) => {
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  server.listen(PORT, () => console.log('Now listening on *:3002'));
 });
