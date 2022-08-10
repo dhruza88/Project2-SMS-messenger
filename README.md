@@ -15,11 +15,11 @@ or
 1.  Download [zipped files](https://github.com/dhruza88/Project2-SMS-messenger/archive/refs/heads/dev.zip).
 2.  Extract files onto local drive.
 3.  Create a .env file in root directory of app files.  Copy paste the following into the .env file:
-***
+```
 DB_NAME='user_db'
 DB_USER='root'
 DB_PASSWORD='password'
-***
+```
 4.  Install Node dependencies and run MySQL.
 5.  Run the 'server.js' file in Node.
 
