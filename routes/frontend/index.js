@@ -48,7 +48,7 @@ router.get("/", (req,res) =>{
 
 router.get("/user/:id",(req,res)=>{
     User.findByPk(req.params.id,{
-        include:[Chat]
+        include:[Chatroom]
     }).then(data=>{
         const hbsData = data.toJSON()
         console.log(hbsData)
@@ -59,18 +59,35 @@ router.get("/user/:id",(req,res)=>{
     })
 })
 
-router.get("/chatroom",(req,res)=>{
-    Chat.findAll({
-        include:[User]
-    }).then(data=>{
-        const hbsData = data.map(modelIns=>modelIns.toJSON())
-        console.log(hbsData)
-        res.render("chatroom",{
-            chats:hbsData,
-            isLoggedIn:req.session.loggedIn
+router.get("/profile",(req,res)=>{
+    if(!req.session.loggedIn){
+        res.redirect("/user/login")
+    }
+    if(req.session.loggedIn)
+    {
+        User.findByPk(req.session.userId, {
+            include: [Chatroom]
+        }).then(data=>{
+            const hbsData = data.toJSON()
+            hbsData.isLoggedIn= req.session.loggedIn
+            console.log(hbsData)
+            res.render("profile",hbsData)
         })
-    })
+    }
 })
+
+// router.get("/chatroom",(req,res)=>{
+//     Chat.findAll({
+//         include:[User]
+//     }).then(data=>{
+//         const hbsData = data.map(modelIns=>modelIns.toJSON())
+//         console.log(hbsData)
+//         res.render("chatroom",{
+//             chats:hbsData,
+//             isLoggedIn:req.session.loggedIn
+//         })
+//     })
+// })
 
 router.get("/chatroom/:id",(req,res)=>{
     Chat.findByPk(req.params.id,{
