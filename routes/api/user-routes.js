@@ -104,17 +104,19 @@ router.get("/:id",(req,res)=>{
     })
 })
 
-// router.delete("/user/:id",(req,res)=>{
-//     User.destroy({
-//         where:{
-//             id:req.params.id
-//         }
-//     }).then(data=>{
-//         res.json(data)
-//     }).catch(err=>{
-//         res.status(500).json({msg:"womp womp",err})
-//     })
-// })
+
+router.delete("/:id",(req,res)=>{
+
+    User.destroy({
+        where:{
+            id:req.params.id
+        }
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg:"womp womp",err})
+    })
+})
 
 // router.post("/login",(req,res)=>{
 //     User.findOne({
