@@ -31,6 +31,19 @@ router.post('/', async (req,res) => {
     }
 });
 
+
+router.get("/:id",(req,res)=>{
+    Chatroom.findOne({
+        where:{
+            id:req.params.id
+        }
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg:"womp womp",err})
+    })
+})
+
 router.delete('/:id', async (req, res) => {
     if(!req.session.loggedIn){
         res.status(403).json({msg:"must login first!"})

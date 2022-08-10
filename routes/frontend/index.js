@@ -17,7 +17,7 @@ router.get("/", (req,res) =>{
         include:[
             {
                 model: Chatroom,
-                as: "joined_users"
+                as: "chatroom"
             },
            //  Message
         ]
@@ -59,7 +59,7 @@ router.get("/user/:id",(req,res)=>{
     })
 })
 
-router.get("/chat",(req,res)=>{
+router.get("/chatroom",(req,res)=>{
     Chat.findAll({
         include:[User]
     }).then(data=>{
@@ -72,7 +72,7 @@ router.get("/chat",(req,res)=>{
     })
 })
 
-router.get("/chat/:id",(req,res)=>{
+router.get("/chatroom/:id",(req,res)=>{
     Chat.findByPk(req.params.id,{
         include:[User]
     }).then(data=>{
