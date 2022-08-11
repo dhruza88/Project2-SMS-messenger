@@ -56,11 +56,17 @@
         }
 
         #messages>li {
-            padding: 0.5rem 1rem;
+            border: 2px solid #dedede;
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            color:darkgoldenrod;
         }
 
         #messages>li:nth-child(odd) {
-            background: #efefef;
+            background-color: #333;
+            color:#dedede
         }
     </style>
 </header>
@@ -69,11 +75,12 @@
 
 
 </head>
-
+<div>
 <ul id="messages"></ul>
 <form id="form" action="">
     <input id="input" autocomplete="off" /><button>Send</button>
 </form>
+</div>
 
 
 <script src="/socket.io/socket.io.js"></script>

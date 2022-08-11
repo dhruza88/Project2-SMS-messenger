@@ -275,6 +275,7 @@ h2 {
 	background-color: rgba(245, 245, 245, 0.4); 
 }
 
+
 /* Cards are split into two columns at 992px or smaller */
 @media screen and (max-width: 992px) {
 
