@@ -71,6 +71,7 @@ header nav ul li {
 .appName{
 	flex: auto;
 	align-items: center;
+	margin-top: 60px;
 }
 
 .appName div{
@@ -88,8 +89,14 @@ header nav ul li {
 	color: #5379fa !important;
 }
 
+.subtitle{
+	margin-top: 50px;
+	margin-left: 120px;
+}
+
 .login,
 .signup{
+	margin-right: 70px;
 	flex: auto;
     vertical-align: auto;
 	font-size: 40px;
@@ -126,8 +133,8 @@ header nav ul li {
 	margin-top: 10px;
 }
 
-.login input[type=button]{
-	width: 260px;
+.login input[type=submit]{
+	width: 250px;
 	height: 35px;
 	background: #fff;
 	border: 1px solid #fff;
@@ -141,11 +148,11 @@ header nav ul li {
 	margin-top: 10px;
 }
 
-.login input[type=button]:hover{
+.login input[type=submit]:hover{
 	opacity: 0.8;
 }
 
-.login input[type=button]:active{
+.login input[type=submit]:active{
 	opacity: 0.6;
 }
 
@@ -159,7 +166,7 @@ header nav ul li {
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.login input[type=button]:focus{
+.login input[type=submit]:focus{
 	outline: none;
 }
 
@@ -190,8 +197,8 @@ header nav ul li {
 	margin-top: 10px;
 }
 
-.signup input[type=button]{
-	width: 260px;
+.signup input[type=submit]{
+	width: 20px;
 	height: 35px;
 	background: #fff;
 	border: 1px solid #fff;
@@ -205,11 +212,11 @@ header nav ul li {
 	margin-top: 10px;
 }
 
-.signup input[type=button]:hover{
+.signup input[type=submit]:hover{
 	opacity: 0.8;
 }
 
-.signup input[type=button]:active{
+.signup input[type=submit]:active{
 	opacity: 0.6;
 }
 
@@ -223,7 +230,7 @@ header nav ul li {
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.signup input[type=button]:focus{
+.signup input[type=submit]:focus{
 	outline: none;
 }
 
@@ -266,4 +273,43 @@ h2 {
 	padding: 10px;
 	flex: 0 0 300px;
 	background-color: rgba(245, 245, 245, 0.4); 
+}
+
+/* Cards are split into two columns at 992px or smaller */
+@media screen and (max-width: 992px) {
+
+
+  
+  /* Cards are stacked on top of each other at 768px or smaller */
+@media screen and (max-width: 768px) {
+.appName div{	
+	font-size: 20px;
+}
+.subtitle{
+	margin-left: 105px;
+}
+.login input[type=text]{
+	margin-left: 50px;
+	width: 125px;
+}
+.login input[type=password]{
+	margin-left: 50px;
+	width: 125px;
+}
+.login input[type=submit]{
+	margin-left: 50px;
+	width:125px;
+}
+.signup input[type=text]{
+	margin-left: 50px;
+	width: 125px;
+}
+.signup input[type=password]{
+	margin-left: 50px;
+	width: 125px;
+}
+.signup input[type=submit]{
+	margin-left: 50px;
+	width:125px;
+}
 }
