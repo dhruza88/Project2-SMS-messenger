@@ -26,7 +26,7 @@ header{
 
 header a {
 	padding: 10px;
-	font-size: 9px;
+	font-size: 15px;
     color: #ffffff;
     text-decoration: none;
 }
@@ -45,7 +45,7 @@ header h1 {
 }
 
 header nav {
-    padding-top: 15px;
+    padding-top: 30px;
     margin-right: 20px;
     float: right;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
