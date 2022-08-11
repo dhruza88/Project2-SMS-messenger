@@ -72,13 +72,21 @@ router.get("/profile",(req,res)=>{
     }
     if(req.session.loggedIn)
     {
+        console.log(' SESSION');
+        console.log(req.session);
+        req.session.userId = !req.session.userId ? req.session.user_id : req.session.userId;
+        console.log('');
         User.findByPk(req.session.userId, {
             // include: [Chatroom]
         }).then(data=>{
-            const hbsData = data.toJSON()
-            hbsData.isLoggedIn= req.session.loggedIn
-            console.log(hbsData)
-            res.render("profile",hbsData)
+            if (data) {
+                const hbsData = data.toJSON()
+                hbsData.isLoggedIn= req.session.loggedIn
+                console.log(hbsData)
+                res.render("profile",hbsData)   
+            } else {
+                console.log('NO FUCKING DATA ');
+            }
         })
     }
 })

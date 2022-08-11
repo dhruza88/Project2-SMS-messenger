@@ -48,6 +48,10 @@ router.post('/login', async (req, res) => {
     }
 });
 
+exports.loginFx = () => {
+
+};
+
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -64,9 +68,15 @@ router.post('/signUp', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.loggedIn = true;
+            console.log('sign up ID');
+            console.log(userData.id);
+            console.log('~~~');
+            console.log(req.session.user);
+            // const jsonUser= userData.toJSON();
 
-            res.status(200).json(userData);
+            res.redirect('/profile');
         });
+        // res.status(200).json(userData)
     } catch (err) {
         res.status(400).json(err);
     }
