@@ -69,6 +69,7 @@ header nav ul li {
 .appName{
 	flex: auto;
 	align-items: center;
+	margin-top: 60px;
 }
 
 .appName div{
@@ -122,7 +123,7 @@ header nav ul li {
 	margin-top: 10px;
 }
 
-.login input[type=button]{
+.login input[type=submit]{
 	width: 260px;
 	height: 35px;
 	background: #fff;
@@ -137,11 +138,11 @@ header nav ul li {
 	margin-top: 10px;
 }
 
-.login input[type=button]:hover{
+.login input[type=submit]:hover{
 	opacity: 0.8;
 }
 
-.login input[type=button]:active{
+.login input[type=submit]:active{
 	opacity: 0.6;
 }
 
@@ -155,7 +156,7 @@ header nav ul li {
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.login input[type=button]:focus{
+.login input[type=submit]:focus{
 	outline: none;
 }
 
@@ -186,7 +187,7 @@ header nav ul li {
 	margin-top: 10px;
 }
 
-.signup input[type=button]{
+.signup input[type=submit]{
 	width: 260px;
 	height: 35px;
 	background: #fff;
@@ -201,11 +202,11 @@ header nav ul li {
 	margin-top: 10px;
 }
 
-.signup input[type=button]:hover{
+.signup input[type=submit]:hover{
 	opacity: 0.8;
 }
 
-.signup input[type=button]:active{
+.signup input[type=submit]:active{
 	opacity: 0.6;
 }
 
@@ -219,7 +220,7 @@ header nav ul li {
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.signup input[type=button]:focus{
+.signup input[type=submit]:focus{
 	outline: none;
 }
 
