@@ -4,7 +4,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: #fff;
+	background: #13293d;
 	color: #fff;
 	background-image: url(../img/1.png);
 	background-position: center center;
@@ -24,7 +24,7 @@ header{
 	margin-top: 0;
   }
 
-  header a {
+header a {
 	padding: 10px;
 	font-size: 9px;
     color: #ffffff;
@@ -39,7 +39,9 @@ header{
 }
 
 header h1 {
-	margin-top: 30px;
+	margin-top: 40px;
+	font-weight: 100;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 header nav {
@@ -57,10 +59,6 @@ header nav ul li {
 	color:aliceblue
 }
 
-span{
-	
-}
-
 .container{
     display: flex;
     flex-direction: column;
@@ -73,13 +71,17 @@ span{
 .appName{
 	flex: auto;
 	align-items: center;
+	margin-top: 60px;
 }
 
 .appName div{
+	margin-top: 70px;
+	margin-bottom: 35px;
 	float: left;
 	color: #fff;
 	font-family: 'Exo', sans-serif;
 	font-size: 35px;
+	;
 	font-weight: 500;
 }
 
@@ -91,11 +93,10 @@ span{
 .signup{
 	flex: auto;
     vertical-align: auto;
-	font-size: 20px;
+	font-size: 40px;
 	height: 150px;
-	width: 350px;
+	width: 200px;
 	padding: 10px;
-	z-index: 2;
 }
 
 .login input[type=text]{
@@ -126,7 +127,7 @@ span{
 	margin-top: 10px;
 }
 
-.login input[type=button]{
+.login input[type=submit]{
 	width: 260px;
 	height: 35px;
 	background: #fff;
@@ -141,11 +142,11 @@ span{
 	margin-top: 10px;
 }
 
-.login input[type=button]:hover{
+.login input[type=submit]:hover{
 	opacity: 0.8;
 }
 
-.login input[type=button]:active{
+.login input[type=submit]:active{
 	opacity: 0.6;
 }
 
@@ -159,7 +160,7 @@ span{
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.login input[type=button]:focus{
+.login input[type=submit]:focus{
 	outline: none;
 }
 
@@ -190,7 +191,7 @@ span{
 	margin-top: 10px;
 }
 
-.signup input[type=button]{
+.signup input[type=submit]{
 	width: 260px;
 	height: 35px;
 	background: #fff;
@@ -205,11 +206,11 @@ span{
 	margin-top: 10px;
 }
 
-.signup input[type=button]:hover{
+.signup input[type=submit]:hover{
 	opacity: 0.8;
 }
 
-.signup input[type=button]:active{
+.signup input[type=submit]:active{
 	opacity: 0.6;
 }
 
@@ -223,7 +224,7 @@ span{
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.signup input[type=button]:focus{
+.signup input[type=submit]:focus{
 	outline: none;
 }
 
@@ -267,4 +268,3 @@ h2 {
 	flex: 0 0 300px;
 	background-color: rgba(245, 245, 245, 0.4); 
 }
-
