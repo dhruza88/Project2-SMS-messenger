@@ -75,6 +75,17 @@ router.get("/",(req,res)=>{
     })
 })
 
+router.put('/:id', (req,res)=>{
+    User.update({
+        username:req.body.username,
+        bio:req.body.bio
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json({msg: "womp,womp",err})
+    })
+})
+
 // router.post("/user",(req,res)=>{
 //     if(!req.session.isUser){
 //         return res.status(403).json({msg:""})
@@ -104,9 +115,7 @@ router.get("/:id",(req,res)=>{
     })
 })
 
-
 router.delete("/:id",(req,res)=>{
-
     User.destroy({
         where:{
             id:req.params.id
