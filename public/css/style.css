@@ -60,7 +60,6 @@ header nav ul li {
 }
 
 .container{
-	padding-top: 0px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

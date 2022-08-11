@@ -7,6 +7,9 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
 router.get('/',async (req, res) =>{
+    if(!req.session.loggedIn){
+        res.status(403).json({msg:"must login first!"})
+    }
     try {
         const chats = await Chatroom.findAll();
         res.json(chats)
@@ -33,6 +36,9 @@ router.post('/', async (req,res) => {
 
 
 router.get("/:id",(req,res)=>{
+    if(!req.session.loggedIn){
+        res.status(403).json({msg:"must login first!"})
+    }
     Chatroom.findOne({
         where:{
             id:req.params.id

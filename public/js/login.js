@@ -36,11 +36,9 @@ signupForm.addEventListener("submit",e=>{
         name:document.querySelector("#signup-name").value,
         email:document.querySelector("#signup-email").value,
         password:document.querySelector("#signup-password").value,
-    };
-    console.log(userObj)
-    console.log(userObj)
-    console.log(userObj)
-    console.log(userObj)
+        desc:document.querySelector("#signup-desc").value,
+    }
+
     console.log(userObj)
     fetch("/api/user",{
         
