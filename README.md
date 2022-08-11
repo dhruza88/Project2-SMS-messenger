@@ -85,8 +85,8 @@ DB_PASSWORD='password'
 ```
 
 ## Screenshots
-
-[image0](https://user-images.githubusercontent.com/90793194/184074276-9367de6d-6f30-4406-ae5c-ad8444b76fb6.png)
+![welcome image](/public/img/3.png)
+![welcome image](/public/img/4.png)
 
 
 
