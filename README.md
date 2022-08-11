@@ -6,11 +6,18 @@
 Use our simple messenger app for quick messaging enabled by Socket.IO.  Socket.IO facilitates real-time, bidirectional, and event-based communcation from your device to our server, allowing for real-time text communication between you and your friends.
 
 ## Install
-1.  Access our deployed app here: http://
+1.  Access our deployed app here: https://campfire-messenger.herokuapp.com/
 
 or
 
-1.  Run the 'server.js' file in Node to set up a local development environment for the app.
+1.  Download [zipped files](https://github.com/dhruza88/Project2-SMS-messenger/archive/refs/heads/dev.zip).
+2.  Extract files onto local drive.
+3.  Install Node dependencies and MySQL.
+4.  Create a .env file in root directory of files from repository.  Copy paste the following into the .env file:
+***
+
+***
+  Run the 'server.js' file in Node to set up a local development environment for the app.
 
 ## How to Use
 1.  Create an account through the sign-up form by inputting your name, email address, and your password.
