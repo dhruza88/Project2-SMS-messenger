@@ -14,6 +14,13 @@ body{
 	font-size: 12px;
 }
 
+header {
+	padding: 40px;
+	text-align: center;
+	background: var(--dark-blue);
+	color: var(--dark-orange);
+  }
+
 span{
 	
 }
@@ -224,3 +231,4 @@ h2 {
 	flex: 0 0 300px;
 	box-shadow: 10px 10px 5px #aaaaaa;
 }
+
