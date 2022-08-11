@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const chatroomRoutes = require('./Chat-routes');
-const userRoutes = require('./User-routes');
+const userRoutes = require('./user-routes');
 const messageRoutes = require('./Message-routes')
 
 
