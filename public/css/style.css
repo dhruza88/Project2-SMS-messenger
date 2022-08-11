@@ -6,12 +6,30 @@ body{
 	padding: 0;
 	background: #fff;
 	color: #fff;
-	background-image: url(../img/1.png);
+	background-image: url(./img/1.png);
 	background-position: center center;
 	background-size: cover;
 	z-index: 0;
 	font-family: Arial;
 	font-size: 12px;
+}
+
+header {
+	padding-top: 40px;
+	font-size: 20px;
+	text-align: center;
+	background-color: #13293d;
+	color: darkgoldenrod;
+  }
+
+.navBar {
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 1%;
+	background-color: #13293d;
+	color: #fff;
 }
 
 span{
@@ -28,12 +46,12 @@ span{
 	vertical-align: auto;
 }
 
-.header{
+.appName{
 	flex: auto;
 	align-items: center;
 }
 
-.header div{
+.appName div{
 	float: left;
 	color: #fff;
 	font-family: 'Exo', sans-serif;
@@ -41,7 +59,7 @@ span{
 	font-weight: 500;
 }
 
-.header div span{
+.appName div span{
 	color: #5379fa !important;
 }
 
@@ -49,6 +67,7 @@ span{
 .signup{
 	flex: auto;
     vertical-align: auto;
+	font-size: 20px;
 	height: 150px;
 	width: 350px;
 	padding: 10px;
@@ -189,10 +208,39 @@ span{
 	padding: 0;
 	background: #fff;
 	color: #fff;
-	background-image: url(../img/2.png);
+	background-image: url(./img/2.png);
 	background-position: center center;
 	background-size: cover;
 	z-index: 0;
 	font-family: Arial;
 	font-size: 12px;
 }
+
+
+
+/* user profile page */
+
+
+h2 {
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+  }
+
+.profile {
+	flex: 1;
+	background-image: url(../img/2.png);
+	padding: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.card {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: var(--border-radius);
+	padding: 10px;
+	flex: 0 0 300px;
+	background-color: rgba(245, 245, 245, 0.4); 
+}
+
