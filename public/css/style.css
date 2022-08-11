@@ -26,7 +26,7 @@ header{
 
 header a {
 	padding: 10px;
-	font-size: 9px;
+	font-size: 15px;
     color: #ffffff;
     text-decoration: none;
 }
@@ -45,7 +45,7 @@ header h1 {
 }
 
 header nav {
-    padding-top: 15px;
+    padding-top: 30px;
     margin-right: 20px;
     float: right;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
@@ -89,8 +89,14 @@ header nav ul li {
 	color: #5379fa !important;
 }
 
+.subtitle{
+	margin-top: 50px;
+	margin-left: 120px;
+}
+
 .login,
 .signup{
+	margin-right: 70px;
 	flex: auto;
     vertical-align: auto;
 	font-size: 40px;
@@ -128,7 +134,7 @@ header nav ul li {
 }
 
 .login input[type=submit]{
-	width: 260px;
+	width: 250px;
 	height: 35px;
 	background: #fff;
 	border: 1px solid #fff;
@@ -192,7 +198,7 @@ header nav ul li {
 }
 
 .signup input[type=submit]{
-	width: 260px;
+	width: 20px;
 	height: 35px;
 	background: #fff;
 	border: 1px solid #fff;
@@ -267,4 +273,43 @@ h2 {
 	padding: 10px;
 	flex: 0 0 300px;
 	background-color: rgba(245, 245, 245, 0.4); 
+}
+
+/* Cards are split into two columns at 992px or smaller */
+@media screen and (max-width: 992px) {
+
+
+  
+  /* Cards are stacked on top of each other at 768px or smaller */
+@media screen and (max-width: 768px) {
+.appName div{	
+	font-size: 20px;
+}
+.subtitle{
+	margin-left: 105px;
+}
+.login input[type=text]{
+	margin-left: 50px;
+	width: 125px;
+}
+.login input[type=password]{
+	margin-left: 50px;
+	width: 125px;
+}
+.login input[type=submit]{
+	margin-left: 50px;
+	width:125px;
+}
+.signup input[type=text]{
+	margin-left: 50px;
+	width: 125px;
+}
+.signup input[type=password]{
+	margin-left: 50px;
+	width: 125px;
+}
+.signup input[type=submit]{
+	margin-left: 50px;
+	width:125px;
+}
 }
