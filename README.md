@@ -97,6 +97,3 @@ Bootstrap -- https://getbootstrap.com
 
 ## Collaborators
 Santana Fernandez, Michael Ha, Jiaje He, David Hruza
-
-## Screenshot
-<img src="./">
