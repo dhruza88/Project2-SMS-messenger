@@ -39,12 +39,24 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static((__dirname, '/public')));
 
+app.get('/chatroom', (req, res) => {
+  try {
+    res.render('chatroom', {layout : `${__dirname}/views/layouts/main`});
+  } catch(err) {
+    console.log(err);
+  }
+});
+
 
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.on('chat message', (msg) => {
     console.log('message: ' + msg);
     io.emit('chat message', msg);
+  });
+  socket.on('theodore', (msg) => {
+    console.log('message: ' + msg);
+    io.emit('theodore', msg);
   });
 });
 
