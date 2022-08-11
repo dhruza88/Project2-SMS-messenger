@@ -25,27 +25,41 @@ const loginForm = async (event) => {
 document.getElementById("login-form").addEventListener("submit", loginForm);
 
 //Signup form
-const signForm = async (event) => {
-    event.preventDefault();
+// const signForm = async (event) => {
+//     event.preventDefault();
 
+const signupForm = document.querySelector("#signup-form");
+
+signupForm.addEventListener("submit",e=>{
+    e.preventDefault();
     const userObj = {
         name:document.querySelector("#signup-name").value,
         email:document.querySelector("#signup-email").value,
         password:document.querySelector("#signup-password").value,
-    }
+    };
+    console.log(userObj)
+    console.log(userObj)
+    console.log(userObj)
+    console.log(userObj)
     console.log(userObj)
     fetch("/api/user",{
+        
         method:"POST",
         body:JSON.stringify(userObj),
         headers:{
             "Content-Type":"application/json"
         }
     }).then(res=>{
+        console.log(userObj)
         if(res.ok){
            location.href = "/profile"
         } else {
             alert("trumpet sound")
         }
     })
-}
-document.getElementById("signup-form").addEventListener("submit", loginForm);
+})
+
+   
+
+// }
+// document.getElementById("signup-form").addEventListener("submit", loginForm);
