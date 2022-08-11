@@ -1,6 +1,6 @@
-# Project2-SMS-messenger
+# Campfire Messenger
 
-![welcome image](/welcome.JPG)
+![welcome image](/public/img/1.png)
 
 ## Description
 Use our simple messenger app for quick messaging enabled by Socket.IO.  Socket.IO facilitates real-time, bidirectional, and event-based communcation from your device to our server, allowing for real-time text communication between you and your friends.
