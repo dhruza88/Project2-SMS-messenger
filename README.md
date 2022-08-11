@@ -84,6 +84,11 @@ DB_PASSWORD='password'
 └── server.js
 ```
 
+## Screenshots
+
+[image0](https://user-images.githubusercontent.com/90793194/184074276-9367de6d-6f30-4406-ae5c-ad8444b76fb6.png)
+
+
 
 ## Resources
 Socket.IO -- https://socket.io
