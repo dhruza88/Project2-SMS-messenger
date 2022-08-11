@@ -17,22 +17,29 @@ body{
 header{
 	width: 100%;
     margin: 0 auto 0 auto;
-	padding-top: 40px;
 	font-size: 11px;
 	text-align: center;
 	background-color: #13293d;
 	color: darkgoldenrod;
+	margin-top: 0;
   }
 
   header a {
+	padding: 10px;
 	font-size: 9px;
     color: #ffffff;
     text-decoration: none;
 }
 
 .navBar{
+	height: 100%;
 	background-color: #13293d;
 	color: #fff;
+	margin-bottom: 10px;
+}
+
+header h1 {
+	margin-top: 30px;
 }
 
 header nav {
