@@ -2,20 +2,22 @@
     <h1>Welcome to the Campfire</h1>
     <nav class="navBar">
         <ul>
-            <li><a href="https://github.com/dhruza88/Project2-SMS-messenger">About</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </ul>
+
+        <li><a href="./">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/chatroom">Chatroom</a></li>
+        <li><a href="https://github.com/dhruza88/Project2-SMS-messenger">About</a></li>
+        
+      </ul>
     </nav>
-</header>
+  </header>
 
-<div id="app">
-    {{!-- <header>
-        <h1>Chatroom</h1>
-    </header> --}}
-    {{!-- <main class="content"> --}}
-        {{!-- <div class="container p-0">
-
-            <h2 id="room-name"></h2>
+    <div id="app">
+        <main class="content">
+            <div class="container p-0">
+            <h1 class="mb-3">Room Name:</h1>
+            <h2 id="room-name">{{topic}}</h2>
+            
 
             <div class="card">
                 <div class="row g-0">
@@ -29,18 +31,19 @@
                             </div>
                         </div>
 
-                        <a href="#" class="list-group-item list-group-item-action border-0">
-                            <div class="d-flex align-items-start">
-                                <img src="" class="rounded-circle mr-1" alt="" width="40" height="40">
-                                <div class="flex-grow-1 ml-3">
 
-                                    <div class="small"><span class="fas fa-circle chat-online"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+    					<a href="#" class="list-group-item list-group-item-action border-0">
+						    <div class="d-flex align-items-start">
+							    <img src="" class="rounded-circle mr-1" alt="" width="40" height="40">
+							    <div class="flex-grow-1 ml-3">
+								    {{user_id}}
+								    <div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
+							    </div>
+				    		</div>
+					    </a>
 
-                        <hr class="d-block d-lg-none mt-1 mb-0">
+					    <hr class="d-block d-lg-none mt-1 mb-0">
+
                     </div>
 
                     <div class="position-relative">
@@ -84,11 +87,20 @@
                     </div>
 
                     <div class="flex-grow-0 py-3 px-4 border-top">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Type your message">
-                            <button class="btn btn-primary">Send</button>
-                        </div>
-                    </div>
+
+						<div class="input-group">
+                            <form id="message-form">
+                                <input 
+                                id = "msg"
+                                type = "text"
+                                placeholder = "Enter message..."
+                                autocomplete="off"
+                                />
+                                <button class="btn" type="submit" id="send-btn">Send</button>
+                            </form>
+						</div>
+					</div>
+
 
                 </div>
             </div> --}}
@@ -99,6 +111,7 @@
             // chatMessages.append(messageElement)
             // }
          -->
+
             {{!-- <div id="chat-messages"></div>
 
             <!-- Send message -->
@@ -177,3 +190,4 @@
         <script src="/public/js/chat.js"></script>
         <script src="/js/chatroom.js"></script>
         </body>
+
