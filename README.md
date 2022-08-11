@@ -84,6 +84,11 @@ DB_PASSWORD='password'
 └── server.js
 ```
 
+## Screenshots
+![welcome image](/public/img/3.png)
+![welcome image](/public/img/4.png)
+
+
 
 ## Resources
 Socket.IO -- https://socket.io
@@ -92,6 +97,3 @@ Bootstrap -- https://getbootstrap.com
 
 ## Collaborators
 Santana Fernandez, Michael Ha, Jiaje He, David Hruza
-
-## Screenshot
-<img src="./">

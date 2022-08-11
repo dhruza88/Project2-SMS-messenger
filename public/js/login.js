@@ -8,7 +8,7 @@ const loginForm = async (event) => {
         password:document.querySelector("#login-password").value,
     }
     console.log(userObj)
-    fetch("/api/user/login",{
+    const response = await fetch("/api/user/login",{
         method:"POST",
         body:JSON.stringify(userObj),
         headers:{
@@ -33,14 +33,14 @@ const signupForm = document.querySelector("#signup-form");
 signupForm.addEventListener("submit",e=>{
     e.preventDefault();
     const userObj = {
-        name:document.querySelector("#signup-name").value,
+        username:document.querySelector("#signup-name").value,
         email:document.querySelector("#signup-email").value,
         password:document.querySelector("#signup-password").value,
         desc:document.querySelector("#signup-desc").value,
     }
 
     console.log(userObj)
-    fetch("/api/user",{
+    fetch("/api/user/signUp",{
         
         method:"POST",
         body:JSON.stringify(userObj),
@@ -48,7 +48,6 @@ signupForm.addEventListener("submit",e=>{
             "Content-Type":"application/json"
         }
     }).then(res=>{
-        console.log(userObj)
         if(res.ok){
            location.href = "/profile"
         } else {
@@ -60,4 +59,4 @@ signupForm.addEventListener("submit",e=>{
    
 
 // }
-// document.getElementById("signup-form").addEventListener("submit", loginForm);
+document.getElementById("signup-form").addEventListener("submit", signupForm);
