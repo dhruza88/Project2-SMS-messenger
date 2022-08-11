@@ -6,7 +6,7 @@ body{
 	padding: 0;
 	background: #fff;
 	color: #fff;
-	background-image: url(../img/1.png);
+	background-image: url(./img/1.png);
 	background-position: center center;
 	background-size: cover;
 	z-index: 0;
@@ -15,16 +15,18 @@ body{
 }
 
 header {
-	padding: 40px;
+	padding-top: 40px;
+	font-size: 20px;
 	text-align: center;
-	background: var(--dark-blue);
-	color: var(--dark-orange);
+	background-color: #13293d;
+	color: darkgoldenrod;
   }
 
 .navBar {
+	flex-direction: row;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-end;
 	padding: 1%;
 	background-color: #13293d;
 	color: #fff;
@@ -65,6 +67,7 @@ span{
 .signup{
 	flex: auto;
     vertical-align: auto;
+	font-size: 20px;
 	height: 150px;
 	width: 350px;
 	padding: 10px;
@@ -205,7 +208,7 @@ span{
 	padding: 0;
 	background: #fff;
 	color: #fff;
-	background-image: url(../img/2.png);
+	background-image: url(./img/2.png);
 	background-position: center center;
 	background-size: cover;
 	z-index: 0;
@@ -238,6 +241,6 @@ h2 {
 	border-radius: var(--border-radius);
 	padding: 10px;
 	flex: 0 0 300px;
-	box-shadow: 10px 10px 5px #aaaaaa;
+	background-color: rgba(245, 245, 245, 0.4); 
 }
 

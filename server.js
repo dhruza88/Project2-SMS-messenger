@@ -8,7 +8,9 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-const PORT = process.env.PORT || 3001;
+
+const PORT = process.env.PORT || 6689;
+
 const helpers = require('./utils/helpers');
 
 
@@ -49,5 +51,5 @@ io.on('connection', (socket) => {
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  server.listen(PORT, () => console.log('Now listening on *:3002'));
+  server.listen(PORT, () => console.log('Now listening on *:6689'));
 });
