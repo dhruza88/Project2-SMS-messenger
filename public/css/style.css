@@ -1,0 +1,246 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	color: #fff;
+	background-image: url(./img/1.png);
+	background-position: center center;
+	background-size: cover;
+	z-index: 0;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+header {
+	padding-top: 40px;
+	font-size: 20px;
+	text-align: center;
+	background-color: #13293d;
+	color: darkgoldenrod;
+  }
+
+.navBar {
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 1%;
+	background-color: #13293d;
+	color: #fff;
+}
+
+span{
+	
+}
+
+.container{
+	padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+	align-items: center;
+	vertical-align: auto;
+}
+
+.appName{
+	flex: auto;
+	align-items: center;
+}
+
+.appName div{
+	float: left;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 35px;
+	font-weight: 500;
+}
+
+.appName div span{
+	color: #5379fa !important;
+}
+
+.login,
+.signup{
+	flex: auto;
+    vertical-align: auto;
+	font-size: 20px;
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+	z-index: 2;
+}
+
+.login input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input[type=password]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input[type=button]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login input[type=button]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=button]:active{
+	opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=button]:focus{
+	outline: none;
+}
+
+.signup input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.signup input[type=password]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.signup input[type=button]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.signup input[type=button]:hover{
+	opacity: 0.8;
+}
+
+.signup input[type=button]:active{
+	opacity: 0.6;
+}
+
+.signup input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.signup input[type=password]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.signup input[type=button]:focus{
+	outline: none;
+}
+
+.app{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	color: #fff;
+	background-image: url(./img/2.png);
+	background-position: center center;
+	background-size: cover;
+	z-index: 0;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+
+
+/* user profile page */
+
+
+h2 {
+	font-size: 1.5rem;
+	margin-bottom: 10px;
+  }
+
+.profile {
+	flex: 1;
+	background-image: url(../img/2.png);
+	padding: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.card {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: var(--border-radius);
+	padding: 10px;
+	flex: 0 0 300px;
+	background-color: rgba(245, 245, 245, 0.4); 
+}
+

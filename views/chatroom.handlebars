@@ -1,0 +1,99 @@
+  <header>
+    <h1>Welcome to the Campfire</h1>
+    <nav class="navBar">
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="https://github.com/dhruza88/Project2-SMS-messenger">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <div id="app">
+        <main class="content">
+            <div class="container p-0">
+            <h1 class="mb-3">Room Name:</h1>
+            <h2 id="room-name">{{topic}}</h2>
+            
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-12 col-lg-5 col-xl-3 border-right">
+
+                        <div class="px-4 d-none d-md-block">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <input type="text" class="form-control my-3" placeholder="Search User">
+                                </div>
+                            </div>
+                        </div>
+
+    					<a href="#" class="list-group-item list-group-item-action border-0">
+						    <div class="d-flex align-items-start">
+							    <img src="" class="rounded-circle mr-1" alt="" width="40" height="40">
+							    <div class="flex-grow-1 ml-3">
+								    {{user_id}}
+								    <div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
+							    </div>
+				    		</div>
+					    </a>
+
+					    <hr class="d-block d-lg-none mt-1 mb-0">
+                    </div>
+
+					<div class="position-relative">
+						<div class="chat-messages p-4">
+
+							<div class="chat-message-left pb-4">
+								<div>
+									<div class="text-muted small text-nowrap mt-2"><!--time--></div>
+								</div>
+								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
+									<div class="font-weight-bold mb-1">Michael</div>
+									Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
+								</div>
+							</div>
+                            <div class="chat-message-left pb-4">
+								<div>
+									<div class="text-muted small text-nowrap mt-2"><!--time--></div>
+								</div>
+								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
+									<div class="font-weight-bold mb-1">Michael</div>
+									Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
+								</div>
+							</div>
+                            <div class="chat-message-left pb-4">
+								<div>
+									<div class="text-muted small text-nowrap mt-2"><!--time--></div>
+								</div>
+								<div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
+									<div class="font-weight-bold mb-1">Michael</div>
+									Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
+								</div>
+							</div>
+
+                        </div>
+                    </div>
+
+                    <div class="flex-grow-0 py-3 px-4 border-top">
+						<div class="input-group">
+                            <form id="message-form">
+                                <input 
+                                id = "msg"
+                                type = "text"
+                                placeholder = "Enter message..."
+                                autocomplete="off"
+                                />
+                                <button class="btn" type="submit" id="send-btn">Send</button>
+                            </form>
+						</div>
+					</div>
+
+                </div>
+            </div>
+
+
+        <!-- Saved chat messages.  In JS file get chatContainer element from our html page, then append the new div to the message container div
+            // const chatMessages = document.getElementById('chat-messages')
+            // chatMessages.append(messageElement)
+            // }
+         -->
+            <div id="chat-messages"></div>
