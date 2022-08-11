@@ -57,10 +57,6 @@ header nav ul li {
 	color:aliceblue
 }
 
-span{
-	
-}
-
 .container{
     display: flex;
     flex-direction: column;
