@@ -91,6 +91,7 @@ header nav ul li {
 
 .login,
 .signup{
+	margin-right: 50px;
 	flex: auto;
     vertical-align: auto;
 	font-size: 40px;
@@ -268,3 +269,4 @@ h2 {
 	flex: 0 0 300px;
 	background-color: rgba(245, 245, 245, 0.4); 
 }
+
