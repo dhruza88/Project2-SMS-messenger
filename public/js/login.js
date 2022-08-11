@@ -40,7 +40,7 @@ signupForm.addEventListener("submit",e=>{
     }
 
     console.log(userObj)
-    fetch("/api/user",{
+    fetch("/api/user/signUp",{
         
         method:"POST",
         body:JSON.stringify(userObj),
@@ -48,7 +48,6 @@ signupForm.addEventListener("submit",e=>{
             "Content-Type":"application/json"
         }
     }).then(res=>{
-        console.log(userObj)
         if(res.ok){
            location.href = "/profile"
         } else {

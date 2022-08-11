@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {User,Chatroom} = require('../../models');
+const { User, Chatroom } = require('../../models');
 const bcrypt = require("bcrypt");
 
 
@@ -9,31 +9,31 @@ router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
         req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.loggedIn = true;
+            req.session.user_id = userData.id;
+            req.session.loggedIn = true;
 
-        res.status(200).json(userData);
-    });
+            res.status(200).json(userData);
+        });
     } catch (err) {
         res.status(400).json(err);
     }
 });
 
-router.post('/login',async(req, res) => {
+router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
 
-        if (!userData) { 
+        if (!userData) {
             console.log(userData)
-            res.status(400).json({ message: "Incorrect login info, try again"});
+            res.status(400).json({ message: "Incorrect login info, try again" });
             return;
         }
 
 
-        
-        if(!bcrypt.compareSync(req.body.password, userData.password)){
-             res.status(401).json({msg: "incorrect login info, try again!"});
-                return
+
+        if (!bcrypt.compareSync(req.body.password, userData.password)) {
+            res.status(401).json({ msg: "incorrect login info, try again!" });
+            return
         }
 
 
@@ -43,7 +43,7 @@ router.post('/login',async(req, res) => {
 
             res.json({ user: userData, message: "You are now logged in!" });
         });
-    } catch (err){
+    } catch (err) {
         res.status(400).json(err);
     }
 });
@@ -58,9 +58,23 @@ router.post('/logout', (req, res) => {
     }
 });
 
+router.post('/signUp', async (req, res) => {
+    try {
+        const userData = await User.create(req.body);
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.loggedIn = true;
+
+            res.status(200).json(userData);
+        });
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 
 // TODO: The issue is here
-router.get("/",(req,res)=>{
+router.get("/", (req, res) => {
     User.findAll({
         include: [
             {
@@ -68,21 +82,21 @@ router.get("/",(req,res)=>{
                 as: "chatroom"
             }
         ]
-    }).then(data=>{
+    }).then(data => {
         res.json(data)
-    }).catch(err=>{
-        res.status(500).json({msg:"womp womp",err})
+    }).catch(err => {
+        res.status(500).json({ msg: "womp womp", err })
     })
 })
 
-router.put('/:id', (req,res)=>{
+router.put('/:id', (req, res) => {
     User.update({
-        username:req.body.username,
-        bio:req.body.bio
-    }).then(data=>{
+        username: req.body.username,
+        bio: req.body.bio
+    }).then(data => {
         res.json(data)
-    }).catch(err=>{
-        res.status(500).json({msg: "womp,womp",err})
+    }).catch(err => {
+        res.status(500).json({ msg: "womp,womp", err })
     })
 })
 
@@ -103,27 +117,27 @@ router.put('/:id', (req,res)=>{
 // })
 
 
-router.get("/:id",(req,res)=>{
+router.get("/:id", (req, res) => {
     User.findOne({
-        where:{
-            id:req.params.id
+        where: {
+            id: req.params.id
         }
-    }).then(data=>{
+    }).then(data => {
         res.json(data)
-    }).catch(err=>{
-        res.status(500).json({msg:"womp womp",err})
+    }).catch(err => {
+        res.status(500).json({ msg: "womp womp", err })
     })
 })
 
-router.delete("/:id",(req,res)=>{
+router.delete("/:id", (req, res) => {
     User.destroy({
-        where:{
-            id:req.params.id
+        where: {
+            id: req.params.id
         }
-    }).then(data=>{
+    }).then(data => {
         res.json(data)
-    }).catch(err=>{
-        res.status(500).json({msg:"womp womp",err})
+    }).catch(err => {
+        res.status(500).json({ msg: "womp womp", err })
     })
 })
 
