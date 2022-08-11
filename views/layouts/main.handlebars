@@ -5,17 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campfire Messenger</title>
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
+  <div>
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
     </nav>
     {{/if}}
-  </header>
+  </div>
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
