@@ -89,6 +89,11 @@ header nav ul li {
 	color: #5379fa !important;
 }
 
+.subtitle{
+	margin-top: 50px;
+	margin-left: 120px;
+}
+
 .login,
 .signup{
 	margin-right: 70px;
@@ -129,7 +134,7 @@ header nav ul li {
 }
 
 .login input[type=submit]{
-	width: 260px;
+	width: 250px;
 	height: 35px;
 	background: #fff;
 	border: 1px solid #fff;
@@ -193,7 +198,7 @@ header nav ul li {
 }
 
 .signup input[type=submit]{
-	width: 260px;
+	width: 20px;
 	height: 35px;
 	background: #fff;
 	border: 1px solid #fff;
@@ -270,3 +275,41 @@ h2 {
 	background-color: rgba(245, 245, 245, 0.4); 
 }
 
+/* Cards are split into two columns at 992px or smaller */
+@media screen and (max-width: 992px) {
+
+
+  
+  /* Cards are stacked on top of each other at 768px or smaller */
+@media screen and (max-width: 768px) {
+.appName div{	
+	font-size: 20px;
+}
+.subtitle{
+	margin-left: 105px;
+}
+.login input[type=text]{
+	margin-left: 50px;
+	width: 125px;
+}
+.login input[type=password]{
+	margin-left: 50px;
+	width: 125px;
+}
+.login input[type=submit]{
+	margin-left: 50px;
+	width:125px;
+}
+.signup input[type=text]{
+	margin-left: 50px;
+	width: 125px;
+}
+.signup input[type=password]{
+	margin-left: 50px;
+	width: 125px;
+}
+.signup input[type=submit]{
+	margin-left: 50px;
+	width:125px;
+}
+}
